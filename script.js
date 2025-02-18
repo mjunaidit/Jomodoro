@@ -2,7 +2,7 @@ class PomodoroTimer {
     constructor() {
         // Timer states
         this.workDuration = 25 * 60; // 25 minutes
-        this.restDuration = 5 * 60;  // 5 minutes
+        this.restDuration = 3;  // 5 minutes
         this.timeLeft = this.workDuration;
         this.timerId = null;
         this.isRunning = false;
