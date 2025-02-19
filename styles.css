@@ -139,22 +139,44 @@ button:not(:disabled):active {
 
 /* Responsive design */
 @media (max-width: 480px) {
-    .timer-container {
+    body {
         padding: var(--spacing-lg);
-        min-width: auto;
-        width: 85%;
+        min-height: 100vh;
+        justify-content: center;
+        box-sizing: border-box;  /* Ensure padding is included in width calculation */
+        width: 100%;  /* Explicit width */
+    }
+
+    .timer-container {
+        padding: var(--spacing-xl);
+        min-height: 70vh;
+        width: 100%;  /* Take full width of padded body */
+        max-width: calc(100vw - (var(--spacing-lg) * 2));  /* Prevent overflow */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0 auto;
+        box-sizing: border-box;  /* Include padding in width calculation */
     }
 
     .time-display {
         font-size: 4rem;
+        margin: var(--spacing-xl) 0;  /* Increased vertical margins */
     }
 
     .controls {
         flex-direction: column;
+        gap: var(--spacing-md);
+        margin-top: auto;  /* Push controls to bottom */
     }
 
-    button {
+    button:not(.mode-toggle) {
         width: 100%;
+        padding: 1rem 1.6rem;  /* Slightly taller buttons */
+    }
+
+    h1 {
+        margin-top: var(--spacing-xl);  /* More space at top */
     }
 }
 
